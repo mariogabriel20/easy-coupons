@@ -15,7 +15,7 @@ String lastResponse = "";
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Color.fromARGB(255, 233, 233, 233), // status bar color
+    statusBarColor: Color.fromARGB(255, 43, 43, 43), // status bar color
   ));
   runApp(const MyApp());
   
@@ -60,12 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 233, 233, 233),
+      backgroundColor: Color.fromARGB(255, 43, 43, 43),
       appBar: AppBar(
         toolbarHeight: 50,
-        title: Center(child: Text("Últimos Cupones", style: TextStyle(color: Colors.black),)),
+        title: Center(child: Text("Últimos Cupones", style: TextStyle(color: Colors.white),)),
         elevation: 0,
-        backgroundColor: Color.fromARGB(255, 233, 233, 233),
+        backgroundColor: Color.fromARGB(255, 43, 43, 43), //233
       ),
       body: Center(
         child: RefreshIndicator(
@@ -109,9 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 4,
-                  blurRadius: 4,
+                  color: Color.fromARGB(255, 7, 7, 7).withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 2,
                   offset: Offset(0, 3), // changes position of shadow
                 ),
               ],
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               top: 8.0, bottom: 8.0, right: 12.0, left: 12.0),
           padding: const EdgeInsets.all(16),
           child: ListTile(
-            title: Text(data[i]['title']),
+            title: Text(data[i]['title'], style: TextStyle(fontWeight: FontWeight.w700)),
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return tilesList;
   }
 
-  Future refreshData() async {
+  Future refreshData() async {    
     setState(() {
       data = getData();
     });

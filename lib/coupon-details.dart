@@ -25,16 +25,13 @@ class _CouponDetailsState extends State<CouponDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 233, 233, 233),
+      backgroundColor: Color.fromARGB(255, 43, 43, 43),
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 233, 233, 233),
-          title: Text(
+          backgroundColor: Color.fromARGB(255, 43, 43, 43),
+          title: const Text(
             "Detalles del cupón",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           )),
       body: Container(
           child: FutureBuilder(
@@ -52,14 +49,16 @@ class _CouponDetailsState extends State<CouponDetails> {
                             child: Center(
                                 child: Text(
                               widget.couponTitle,
-                              style: TextStyle(fontSize: 16),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ))),
                         Container(
                             padding: EdgeInsets.all(24.0),
                             child: const Center(
                                 child: Text(
-                              "Este cupón es por tiempo limitado y también tiene una cantidad limitada de veces que puede ser cobrado, por lo tanto, es posible que al intentar utilizarlo ya no esté disponible.",
-                              style: TextStyle(fontSize: 16),
+                              "Este cupón es por tiempo limitado y también tiene una cantidad limitada de veces que puede ser canjeado, por lo tanto, es posible que al intentar utilizarlo ya no esté disponible.",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ))),
                         Container(
                           padding: EdgeInsets.all(16.0),
@@ -68,8 +67,12 @@ class _CouponDetailsState extends State<CouponDetails> {
                               width: 200,
                               child: ElevatedButton(
                                 onPressed: () => _launchUrl(data['url']),
-                                child: Text("Ir al curso"),
+                                child: const Text(
+                                  "Ir al curso",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                                 style: ElevatedButton.styleFrom(
+                                  primary: Color.fromARGB(255, 36, 110, 207),
                                   shape: RoundedRectangleBorder(
                                       //to set border radius to button
                                       borderRadius: BorderRadius.circular(30)),
